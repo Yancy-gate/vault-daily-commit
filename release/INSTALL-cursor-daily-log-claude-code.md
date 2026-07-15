@@ -1,6 +1,6 @@
 ﻿# cursor-daily-log · Claude Code 版安装与使用
 
-> 版本 1.1.0 · 适用于 Claude Code  
+> 版本 1.1.1 · 适用于 Claude Code  
 > 仓库：https://github.com/Yancy-gate/vault-daily-commit
 
 ## 安装

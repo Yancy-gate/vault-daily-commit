@@ -6,7 +6,7 @@ import shutil
 import zipfile
 from pathlib import Path
 
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 ROOT = Path(__file__).resolve().parent.parent
 RELEASE = ROOT / "release"
 DIST = RELEASE / "dist"

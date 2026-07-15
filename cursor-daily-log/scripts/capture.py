@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Capture today's Cursor Agent sessions into Obsidian 其他/Cursor日志/YYYY-MM-DD.md.
+"""Capture today's Cursor Agent sessions into Obsidian logs/Cursor/YYYY-MM-DD.md.
 
 Only includes user turns whose <timestamp> falls on the target local date.
 1) Each session → one refined Chinese sentence
@@ -92,18 +92,15 @@ def extract_text(content) -> str:
 
 
 def humanize_project(project_dir_name: str) -> str:
+    """Strip common Cursor project-dir prefixes without hard-coding usernames."""
     name = project_dir_name
-    for prefix in (
-        "c-Users-hproy-Projects-",
-        "c-Users-hproy-Desktop-",
-        "c-Users-hproy-",
-        "d-Projects-",
-        "d-Tools-editor-",
-        "d-",
-    ):
-        if name.startswith(prefix):
-            name = name[len(prefix) :]
-            break
+    # c-Users-<name>-Projects-foo → foo ; d-Tools-editor-bar → bar
+    name = re.sub(r"^[a-z]-Users-[^-]+-Projects-", "", name, count=1)
+    name = re.sub(r"^[a-z]-Users-[^-]+-Desktop-", "", name, count=1)
+    name = re.sub(r"^[a-z]-Users-[^-]+-", "", name, count=1)
+    name = re.sub(r"^[a-z]-Projects-", "", name, count=1)
+    name = re.sub(r"^[a-z]-Tools-editor-", "", name, count=1)
+    name = re.sub(r"^[a-z]-", "", name, count=1)
     if name == "empty-window":
         return "home / empty-window"
     return name.replace("-", " ")
@@ -502,7 +499,7 @@ def main() -> int:
     day = date.fromisoformat(args.date) if args.date else datetime.now(tz).date()
 
     vault = Path(cfg["vault_path"])
-    out_dir = vault / cfg.get("log_subdir", "其他/Cursor日志")
+    out_dir = vault / cfg.get("log_subdir", "logs/Cursor")
     out_dir.mkdir(parents=True, exist_ok=True)
     out_file = out_dir / f"{day.isoformat()}.md"
 

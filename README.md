@@ -4,11 +4,13 @@ Obsidian 学习库的两个跨平台 Agent 工具（**同仓分发**）：
 
 | 工具 | 作用 |
 |------|------|
-| **vault-daily-commit**（仓库根目录） | 安全提交每日笔记 + 截图（防 Obsidian Git 回滚） |
+| **vault-daily-commit**（仓库根目录） | 安全提交每日笔记 + 附件截图（防 Obsidian Git 回滚） |
 | **[cursor-daily-log/](cursor-daily-log/)** | 把当天 Cursor 会话归纳成「主线 + 一句摘要」写入笔记 |
 
 GitHub：https://github.com/Yancy-gate/vault-daily-commit  
-**Release**：https://github.com/Yancy-gate/vault-daily-commit/releases/tag/v1.1.0
+**Release**：https://github.com/Yancy-gate/vault-daily-commit/releases
+
+路径与提示词均为**通用占位**；安装后请改 `vault-config.md` / `config.json`。
 
 ---
 
@@ -33,7 +35,7 @@ SKILL.md / vault-config.md / prompts.md / install.* / platforms/
 最短提示词：
 
 ```text
-帮我 commit 今天的考研数学笔记和杂项里的新截图，别带无关文件，先 status 再提交，不要 push。
+帮我按 vault-config 提交今天的笔记和附件截图，别带无关文件，先 status 再 commit，不要 push。
 ```
 
 ---

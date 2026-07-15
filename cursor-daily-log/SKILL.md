@@ -27,14 +27,14 @@ description: >-
 - [ ] 2. 确认已安装 scripts（~/.cursor/scripts/cursor-daily-log 或本 skill/scripts）
 - [ ] 3. 确认 config.json 有 vault_path / python_path
 - [ ] 4. 运行 run.ps1（可加 -Date）
-- [ ] 5. 打开生成的 其他/Cursor日志/YYYY-MM-DD.md 给用户看主线
+- [ ] 5. 打开生成的 `<log_subdir>/YYYY-MM-DD.md` 给用户看主线
 ```
 
 ### 手动运行
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.cursor\scripts\cursor-daily-log\run.ps1"
-powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.cursor\scripts\cursor-daily-log\run.ps1" -Date 2026-07-14
+powershell -NoProfile -ExecutionPolicy Bypass -File "$env:USERPROFILE\.cursor\scripts\cursor-daily-log\run.ps1" -Date YYYY-MM-DD
 ```
 
 ### 注册每晚任务（默认 21:00）

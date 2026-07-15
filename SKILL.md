@@ -1,19 +1,17 @@
 ---
 name: vault-daily-commit
 description: >-
-  Safely commit daily Obsidian study notes and attachment screenshots without
+  Safely commit daily Obsidian notes and attachment screenshots without
   staging unrelated vault changes. Reads paths from vault-config.md. Use when
-  the user asks to commit daily notes, 数学笔记, 考研笔记, 杂项截图, vault
-  backup, or says 帮我 commit / 每日笔记提交 / 今天笔记写完了.
+  the user asks to commit daily notes, scoped vault backup, or says
+  帮我 commit / 每日笔记提交 / 今天笔记写完了.
 ---
 
 # vault-daily-commit
 
-Scoped git commit for daily study notes. Prevents「版本回滚 / 图片丢失」from unstaged edits + Obsidian Git pull/stash.
+Scoped git commit for daily notes. Prevents「版本回滚 / 图片丢失」from unstaged edits + Obsidian Git pull/stash.
 
 **Before running**: read [vault-config.md](vault-config.md) in this skill directory for paths, commit messages, and exclusions.
-
-Human doc (this vault): `其他/Cursor每日笔记提交.md`
 
 ## Workflow
 
@@ -35,38 +33,38 @@ Human doc (this vault): `其他/Cursor每日笔记提交.md`
 
 ### Step 2 — Inspect (scoped)
 
-Use paths from `vault-config.md`. Example for default vault:
+Use **exact paths from `vault-config.md`** (do not hard-code). Example if config says `notes/` and `attachments/`:
 
 ```bash
-git status --porcelain -- "考研/" "杂项/" ".gitignore"
-git diff --stat -- "考研/" "杂项/"
+git status --porcelain -- "notes/" "attachments/" ".gitignore"
+git diff --stat -- "notes/" "attachments/"
 ```
 
 ```powershell
-git status --porcelain -- "考研/" "杂项/" ".gitignore"
-git diff --stat -- "考研/" "杂项/"
+git status --porcelain -- "notes/" "attachments/" ".gitignore"
+git diff --stat -- "notes/" "attachments/"
 ```
 
-Add `考研/英语/` when user asks for 英语.
+Include any extra note dirs listed in config when the user asks for them.
 
 ### Step 3 — Stage (allowlist)
 
 **Include** when changed:
 
-- Notes dirs from config (`notes_math`, `notes_english`, …)
-- `attachments` + `attachments_glob` (e.g. `杂项/*.webp`)
+- Note dirs from config (`notes_primary`, `notes_extra`, …)
+- `attachments` + `attachments_glob` (e.g. `attachments/*.webp`)
 - `.gitignore` only if attachment rules changed
 
 **Exclude**: see `vault-config.md` → 禁止纳入本次提交.
 
 ```bash
-git add -- "考研/数学/"
-git add -f -- "杂项/"*.webp    # if webp ignored by .gitignore
+git add -- "notes/"
+git add -f -- "attachments/"*.webp    # if webp ignored by .gitignore
 ```
 
 ```powershell
-git add -- "考研/数学/"
-git add -f -- "杂项/*.webp"
+git add -- "notes/"
+git add -f -- "attachments/*.webp"
 ```
 
 Never `git add -A`.
@@ -91,7 +89,7 @@ git push origin HEAD
 | `git status` / `git diff` before commit | `git add -A` |
 | Stage allowlisted paths only | Commit `.obsidian/` or workspace |
 | Default: no push | `git reset --hard`, force push |
-| `git add -f` for ignored webp | Mix unrelated bulk deletes into note commit |
+| `git add -f` for ignored attachments | Mix unrelated bulk deletes into note commit |
 
 ## User trigger phrases
 
@@ -99,8 +97,8 @@ See [prompts.md](prompts.md). When user pastes them, follow this skill.
 
 ## Post-commit (tell user)
 
-- Today's `.md` is in the commit
-- New webp in attachments dir and tracked (`git ls-files`)
+- Today's note files are in the commit
+- New attachments are tracked (`git ls-files`)
 - Obsidian preview shows images (links match attachment path)
 
 ## Platform install

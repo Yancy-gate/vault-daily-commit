@@ -1,11 +1,11 @@
 ﻿# cursor-daily-log · Cursor 版安装与使用
 
-> 版本 1.1.0 · 适用于 Cursor Agent  
+> 版本 1.1.1 · 适用于 Cursor Agent  
 > 仓库：https://github.com/Yancy-gate/vault-daily-commit
 
 ## 做什么
 
-抓取本机 Cursor **当天**会话 → Obsidian `其他/Cursor日志/YYYY-MM-DD.md`：
+抓取本机 Cursor **当天**会话 → Obsidian `logs/Cursor（或 config 中的 log_subdir）/YYYY-MM-DD.md`：
 
 - **今日主线**（2～5 条）
 - **各会话一句摘要**（不堆原话）

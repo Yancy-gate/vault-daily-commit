@@ -20,7 +20,7 @@ Copy-Item -Recurse skills\vault-daily-commit .cursor\skills\
 ## 验证
 
 1. 用 Cursor 打开 vault 根目录  
-2. 对话输入：`帮我 commit 今天的考研数学笔记`  
+2. 对话输入：`帮我按 vault-config 提交今天的笔记`  
 3. Agent 应先 `git status`，且只 stage `vault-config.md` 里的路径  
 
 ## 说明

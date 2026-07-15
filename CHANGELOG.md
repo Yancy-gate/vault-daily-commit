@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.1] - 2026-07-15
+
+### Changed — 脱敏 / 通用化
+
+- 去掉示例中的个人 vault 目录名与科目专用提示词；改为 `notes/`、`attachments/` 等占位
+- `prompts.md` / 各平台 INSTALL 改为「按 vault-config 提交」通用说法
+- `cursor-daily-log`：示例日志目录改为 `logs/Cursor`；项目名清洗不再硬编码本机用户名
+- 配置示例中的 API / 本地路径改为中性占位（不含真实 key）
+
+架构与两工具分包方式不变。
+
 ## [1.1.0] - 2026-07-15
 
 ### Added — cursor-daily-log
@@ -28,8 +39,7 @@
 - `platforms/` 各 Agent 安装说明
 - GitHub Release 分包：`universal` + 各平台 zip
 
-### 默认 vault 约定
+### 默认约定（已在 1.1.1 改为占位示例）
 
-- 笔记：`考研/数学/`、`考研/英语/`
-- 截图：`杂项/*.webp`
+- 路径与提交信息均在 `vault-config.md` 配置
 - 提交前 scoped `git status` / `git diff`，禁止 `git add -A`

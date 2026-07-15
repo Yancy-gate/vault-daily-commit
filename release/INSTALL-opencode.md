@@ -1,6 +1,6 @@
-# vault-daily-commit · OpenCode 版安装与使用
+﻿# vault-daily-commit · OpenCode 版安装与使用
 
-> 版本 1.0.0 · 适用于 [OpenCode](https://opencode.ai)
+> 版本 1.1.0 · 适用于 [OpenCode](https://opencode.ai)
 
 ## 安装
 
@@ -42,4 +42,4 @@ opencode
 
 ## 链接
 
-- Release：https://github.com/Yancy-gate/vault-daily-commit/releases/tag/v1.0.0
+- Release：https://github.com/Yancy-gate/vault-daily-commit/releases/tag/v1.1.0

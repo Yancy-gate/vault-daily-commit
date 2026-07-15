@@ -1,6 +1,6 @@
-# vault-daily-commit · Codex CLI 版安装与使用
+﻿# vault-daily-commit · Codex CLI 版安装与使用
 
-> 版本 1.0.0 · 适用于 OpenAI [Codex CLI](https://github.com/openai/codex)
+> 版本 1.1.0 · 适用于 OpenAI [Codex CLI](https://github.com/openai/codex)
 
 ## 安装
 
@@ -34,4 +34,4 @@ codex
 
 ## 链接
 
-- Release：https://github.com/Yancy-gate/vault-daily-commit/releases/tag/v1.0.0
+- Release：https://github.com/Yancy-gate/vault-daily-commit/releases/tag/v1.1.0

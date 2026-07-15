@@ -1,6 +1,6 @@
-# vault-daily-commit · Cursor 版安装与使用
+﻿# vault-daily-commit · Cursor 版安装与使用
 
-> 版本 1.0.0 · 适用于 [Cursor](https://cursor.com) Agent
+> 版本 1.1.0 · 适用于 [Cursor](https://cursor.com) Agent
 
 ## 这个 Skill 做什么
 
@@ -96,4 +96,4 @@ Copy-Item -Recurse vault-daily-commit "$vault\.cursor\skills\"
 ## 链接
 
 - 完整仓库：https://github.com/Yancy-gate/vault-daily-commit
-- Release：https://github.com/Yancy-gate/vault-daily-commit/releases/tag/v1.0.0
+- Release：https://github.com/Yancy-gate/vault-daily-commit/releases/tag/v1.1.0

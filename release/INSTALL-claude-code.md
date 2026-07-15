@@ -1,6 +1,6 @@
-# vault-daily-commit · Claude Code 版安装与使用
+﻿# vault-daily-commit · Claude Code 版安装与使用
 
-> 版本 1.0.0 · 适用于 [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
+> 版本 1.1.0 · 适用于 [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
 
 ## 这个 Skill 做什么
 
@@ -69,4 +69,4 @@ claude
 
 ## 链接
 
-- Release：https://github.com/Yancy-gate/vault-daily-commit/releases/tag/v1.0.0
+- Release：https://github.com/Yancy-gate/vault-daily-commit/releases/tag/v1.1.0
